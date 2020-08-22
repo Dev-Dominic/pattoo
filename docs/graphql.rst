@@ -53,6 +53,24 @@ Sample Result
       }
     }
 
+
+Refresh Tokens
+--------------
+
+In the event that an `accessToken` has expired it is refreshed using
+`authRefresh`:
+
+.. code-block:: text
+
+    mutation{
+          authRefresh(refreshToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTU5Nzg1OTI1NCwibmJmIjoxNTk3ODU5MjU0LCJqdGkiOiJjYWM3OWU0Yy1iNjAxLTQwNmQtYTFiNy1kYzgwOTdjNmYzMzUiLCJpZGVudGl0eSI6MywiZXhwIjoxNTk3OTQ1NjU0fQ.kjAWtIeK6n_Y8sDYbUzs4S9RRmTBdiQMNk4rFm8YN1w"){
+            accessToken
+          }
+    }
+
+How to Query with Access Tokens
+-------------------------------
+
 All queries require a `token` input attribute when querying the GraphQL server.
 
 .. code-block:: text
@@ -67,6 +85,8 @@ All queries require a `token` input attribute when querying the GraphQL server.
             }
         }
     }
+
+
 
 View All DataPoints
 -------------------
